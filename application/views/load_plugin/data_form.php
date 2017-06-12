@@ -60,7 +60,15 @@
   <script src="<?php echo base_url(); ?>assets/dist/js/app.min.js"></script>
   <!-- AdminLTE for demo purposes -->
   <script src="<?php echo base_url(); ?>assets/dist/js/demo.js"></script>
+  <!-- Ceka editor -->
+  <script src="<?php echo base_url(); ?>assets/ckeditor/ckeditor.js"></script>
   <!-- Page script -->
+  <script>
+  $(function () {
+    CKEDITOR.replace('editor1');
+ 
+  });
+</script>
   <script>
     $(function () {
     //Initialize Select2 Elements

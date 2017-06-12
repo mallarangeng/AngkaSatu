@@ -2,7 +2,7 @@
     <div class="pull-right hidden-xs">
       <b>Version</b> 1.0
     </div>
-    <strong>Copyright &copy; <?php date('Y'); ?> <a href="http://almsaeedstudio.com">Satu Angka</a>.</strong> All rights
+    <strong>Copyright &copy; <?php date('Y'); ?> <a href="">Angka Satu</a>.</strong> All rights
     reserved.
   </footer>
 
