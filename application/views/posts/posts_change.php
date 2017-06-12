@@ -19,7 +19,7 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" action="<?php echo base_url('posts/add_posts') ?>" method="post">
+            <form role="form" action="<?php echo base_url('posts/u_posts'); ?>" method="post">
               <div class="box-body">
               <div class="form-group">
                 <label>Post Category</label>
@@ -36,7 +36,7 @@
                 
                 <div class="form-group">
                   <label for="">Post Title</label>
-                  <input type="text" name="post_tittle" class="form-control" placeholder="Post Title">
+                  <input type="text" name="post_tittle" value="<?php echo $posts->post_tittle;?>" class="form-control" placeholder="Post Title">
                 </div>
                     <div class="form-group">
                   <label for="">Post Date</label>
@@ -44,28 +44,29 @@
                   <div class="input-group-addon">
                     <i class="fa fa-calendar"></i>
                   </div>
-                  <input type="text" name="post_date" data-date-format="yyyy-mm-dd" class="form-control pull-right" id="datepicker">
+                  <input type="text" name="post_date" value="<?php echo $posts->post_date;?>" data-date-format="yyyy-mm-dd" class="form-control pull-right" id="datepicker">
                 </div>
 
                 </div>
                 <div class="form-group">
                   <label for="">Conten</label>
-                  <textarea class="textarea" name="post_conten" id="editor1" placeholder="Place some text here" style="width: 100%; height: 100px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                  <textarea class="textarea" name="post_conten" id="editor1" placeholder="Place some text here" style="width: 100%; height: 100px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"><?php echo $posts->post_conten;?></textarea>
                 </div>
                  <div class="form-group">
                   <label>Publish Conten</label>
                   <select class="form-control select2" name="post_status" style="width: 100%;">
-                  <option selected="Publish" value="Publish">Publish</option>
+                  <option selected="<?php echo $posts->post_status;?>" value="<?php echo $posts->post_status;?>"><?php echo $posts->post_status;?></option>
+                  <option value="Publish">Publish</option>
                   <option value="No Publish">No Publish</option>
                 </select>
                 </div>
-                
-                <input type="hidden" name="post_modified" value="<?php echo date('Y-m-d'); ?>">
-                <input type="hidden" name="post_user" value="hendri">
+                <input type="hidden" name="id" value="<?php echo $posts->id;?>">
+                <input type="hidden" name="post_modified" value="<?php echo $posts->post_modified;?>">
+                <input type="hidden" name="post_user" value="<?php echo $posts->post_user;?>">
               </div>
               <!-- /.box-body -->
               <div class="box-footer">
-                <input type="submit" name="simpan" class="btn btn-primary" value="Save">
+                <input type="submit" name="update" class="btn btn-primary" value="Update">
                 <button type="submit" onclick="window.history.back();" class="btn btn-warning">Cancel</button>
               </div>
             </form>

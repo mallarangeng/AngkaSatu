@@ -24,12 +24,13 @@
                 <thead>
                 <tr>
                   <th>Id</th>
-                  <th>Kategory</th>
                   <th>Post Title</th>
+                  <th>Kategory</th>
                   <th>Post Status</th>
                   <th>Post Date</th>
                   <th>Post Modified</th>
                   <th>Post User</th>
+                  <th>Change</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -43,12 +44,13 @@
                  ?>
                 <tr>
                   <td><?php echo $data->id;?></td>
-                  <td><?php echo $data->id_category;?></td>
-                  <td><?php echo $data->post_tittle;?></td>
+                  <td><a href="<?php echo base_url('posts/read/'.$data->id) ?>"><?php echo $data->post_tittle;?></a></td>
+                  <td><?php echo $data->name_category;?></td>
                   <td><span class="label label-<?php echo $aa; ?>"><?php echo $data->post_status;?></span></td>
                   <td><?php echo tgl_indo($data->post_date);?></td>
                   <td><?php echo tgl_indo($data->post_modified);?></td>
                   <td><?php echo $data->post_user;?></td>
+                  <td><a href="<?php echo base_url('posts/change/'.$data->id) ?>"><i class="fa fa-edit"></i></a></td>
                 </tr>
                 <?php
                   }
